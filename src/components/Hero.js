@@ -1,8 +1,34 @@
-"use client"; // required for Framer Motion in Next.js App Router
+"use client";
 
 import { motion } from "framer-motion";
 import HeroBackground from "./HeroBackground";
-import { GitHubIcon, InstagramIcon, TwitterIcon } from "./SocialMediaIcon";
+
+const container = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 30,
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      damping: 20,
+    },
+  },
+};
 
 export default function Hero() {
   return (
@@ -10,56 +36,38 @@ export default function Hero() {
       <HeroBackground />
 
       <motion.main
-        className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start relative z-10"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 30,
-          restDelta: 0.01,
-        }}
+        className="flex flex-col gap-2 row-start-2 items-center sm:items-start relative z-10"
+        variants={container}
+        initial="hidden"
+        animate="show"
       >
-        <motion.div
-          className="flex flex-col justify-center items-center text-center gap-6"
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 30,
-            restDelta: 0.01,
-          }}
+        <motion.h1
+          className="sm:text-7xl text-5xl font-medium "
+          variants={item}
         >
-          <h1 className="sm:text-7xl text-5xl font-medium">
-            Hi! I&apos;m Farras
-          </h1>
+          Hi! I&apos;m Farras
+        </motion.h1>
 
-          <p className="max-w-sm text-sm sm:text-lg sm:max-w-2xl">
-            I design and build polished, user-friendly interfaces with React,
-            focusing on simplicity, performance, and seamless interactions.
-          </p>
+        <motion.p
+          className="max-w-sm text-sm sm:text-lg sm:max-w-2xl text-center"
+          variants={item}
+        >
+          I design and build polished, user-friendly interfaces with React,
+          focusing on simplicity, performance, and seamless interactions.
+        </motion.p>
 
-          <motion.div
-            className="flex gap-4 items-center flex-col sm:flex-row"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 30,
-              restDelta: 0.01,
-            }}
+        <motion.div
+          className="flex gap-4 items-center flex-col sm:flex-row mt-4"
+          variants={item}
+        >
+          <a
+            className="rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <a
-              className="rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              More About Me
-            </a>
-          </motion.div>
+            More About Me
+          </a>
         </motion.div>
       </motion.main>
     </div>
