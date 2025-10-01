@@ -15,25 +15,27 @@ export default function Hero() {
         animate={{ y: 0, opacity: 1 }}
         transition={{
           type: "spring",
-          stiffness: 100,
-          damping: 60,
+          stiffness: 200,
+          damping: 30,
           restDelta: 0.01,
         }}
       >
         <motion.div
-          className="flex flex-col justify-center items-center text-center gap-8"
+          className="flex flex-col justify-center items-center text-center gap-6"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             type: "spring",
-            stiffness: 100,
-            damping: 60,
+            stiffness: 200,
+            damping: 30,
             restDelta: 0.01,
           }}
         >
-          <h1 className="text-7xl font-medium">Hi! I&apos;m Farras</h1>
+          <h1 className="sm:text-7xl text-5xl font-medium">
+            Hi! I&apos;m Farras
+          </h1>
 
-          <p className="max-w-xl">
+          <p className="max-w-sm text-sm sm:text-lg sm:max-w-2xl">
             I design and build polished, user-friendly interfaces with React,
             focusing on simplicity, performance, and seamless interactions.
           </p>
@@ -44,8 +46,8 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{
               type: "spring",
-              stiffness: 100,
-              damping: 60,
+              stiffness: 200,
+              damping: 30,
               restDelta: 0.01,
             }}
           >
