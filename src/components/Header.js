@@ -1,15 +1,8 @@
 "use client";
 
-import {
-  ChevronDown,
-  ChevronUp,
-  FileText,
-  Folder,
-  Home,
-  Sun,
-  User,
-} from "react-feather";
+import { FileText, Folder, Home, Sun, User } from "react-feather";
 import Dropdown from "./Dropdown";
+import ChevronBoop from "./ChevronBoop/ChevronBoop";
 
 export default function Header() {
   return (
@@ -64,12 +57,12 @@ export default function Header() {
           trigger={({ open, setIsOpen }) => (
             <button
               className="p-2 rounded-lg cursor-pointer"
-              onClick={() => setIsOpen(!open)}
+              onClick={() => setIsOpen((prev) => !prev)}
             >
               {open ? (
-                <ChevronUp className="w-6 h-6" />
+                <ChevronBoop direction="up" />
               ) : (
-                <ChevronDown className="w-6 h-6" />
+                <ChevronBoop direction="down" />
               )}
             </button>
           )}

@@ -1,0 +1,35 @@
+.chevron {
+  transition: transform 0.3s ease-in-out;
+}
+
+.chevronDown:hover {
+  animation: bounceDown 0.4s ease-in-out;
+}
+
+.chevronUp:hover {
+  animation: bounceUp 0.4s ease-in-out;
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
