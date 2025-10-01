@@ -5,7 +5,7 @@ import styles from "./ChevronBoop.module.css";
 
 export default function ChevronBoop({ direction = "down" }) {
   return (
-    <div className="p-2 rounded-lg cursor-pointer">
+    <div className=" rounded-lg cursor-pointer">
       {direction === "down" ? (
         <ChevronDown
           className={`${styles.chevron} ${styles.chevronDown} w-6 h-6`}

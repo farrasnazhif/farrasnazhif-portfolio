@@ -36,7 +36,7 @@ export default function Hero() {
       <HeroBackground />
 
       <motion.main
-        className="flex flex-col gap-2 row-start-2 items-center sm:items-start relative z-10"
+        className="flex flex-col gap-2 row-start-2 items-center relative z-10"
         variants={container}
         initial="hidden"
         animate="show"
@@ -57,7 +57,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          className="flex gap-4 items-center flex-col sm:flex-row mt-4"
+          className="flex gap-4 items-center flex-col sm:flex-row mt-6"
           variants={item}
         >
           <a
