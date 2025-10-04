@@ -1,18 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FileText, Folder, Home, Sun, User } from "react-feather";
 import Dropdown from "./Dropdown";
 import ChevronBoop from "./ChevronBoop/ChevronBoop";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const [isDesktop, setIsDesktop] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 800);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1200);
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -22,38 +32,47 @@ export default function Header() {
         opacity: 1,
         width: "100%",
         borderRadius: 0,
-        borderWidth: 0,
-        borderColor: "rgba(0,0,0,0)",
         backgroundColor: "rgba(0,0,0,0)",
         boxShadow: "0 0 0 rgba(0,0,0,0)",
         backdropFilter: "blur(0px)",
       }}
-      animate={{
-        y: scrolled ? 25 : 0,
-        width: scrolled ? "50%" : "100%",
-        borderRadius: scrolled ? "1.25rem" : "0rem",
-        borderWidth: 0.1,
-        borderColor: scrolled
-          ? "rgba(209,213,219,0.4)"
-          : "rgba(209,213,219,0.0)",
-        boxShadow: scrolled
-          ? "0 8px 20px rgba(0,0,0,0.1)"
-          : "0 0 0 rgba(0,0,0,0)",
-        backdropFilter: scrolled ? "blur(10px)" : "blur(0px)",
-      }}
+      animate={
+        isDesktop
+          ? {
+              y: scrolled ? 25 : 0,
+              width: scrolled ? "40%" : "100%",
+              borderRadius: scrolled ? "1.25rem" : "0rem",
+              backgroundColor: scrolled
+                ? "rgba(0,0,0,0.55)"
+                : "rgba(0,0,0,0.0)",
+              boxShadow: scrolled
+                ? "inset 0 0 12px rgba(255,255,255,0.05), 0 8px 25px rgba(0,0,0,0.3)"
+                : "0 0 0 rgba(0,0,0,0)",
+              backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+            }
+          : {}
+      }
       transition={{
         type: "spring",
         stiffness: 100,
         damping: 20,
-        borderColor: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 0.4, ease: "easeInOut" },
+        backgroundColor: { duration: 0.5, ease: "easeInOut" },
+        boxShadow: { duration: 0.5, ease: "easeInOut" },
+        restDelta: 0.01,
       }}
       className="fixed left-1/2 -translate-x-1/2 z-50 text-white"
     >
       {/* Desktop */}
-      <div className="hidden sm:flex max-w-[1200px] mx-auto px-6 py-4 items-center justify-between gap-4">
-        <div className="font-bold text-xl cursor-pointer">FN</div>
+      <div className="hidden xl:flex max-w-[1200px] mx-auto px-6 py-4 items-center justify-between gap-4">
+        <button className="hidden lg:block font-bold text-2xl cursor-pointer text-slate-400">
+          FN
+        </button>
 
-        <nav className="flex gap-8" aria-label="Main navigation">
+        <nav
+          className="flex justify-center items-center gap-8"
+          aria-label="Main navigation"
+        >
           <a href="#" className="font-medium hover:text-slate-400">
             Home
           </a>
@@ -71,28 +90,27 @@ export default function Header() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <button className="p-2 rounded-lg cursor-pointer hover:bg-black/10">
-            <Sun className="w-4 h-4" />
+            <Sun className="w-5 h-5" />
           </button>
         </div>
       </div>
 
       {/* Mobile */}
-      <div className="sm:hidden max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-4 relative">
+      <div className="xl:hidden max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-4 relative">
         <div className="font-bold text-xl cursor-pointer">FN</div>
 
         <nav
-          className={`flex justify-between items-center gap-4 rounded-full px-3 py-1 border ${
-            scrolled
-              ? "bg-white/90 text-black border-gray-200 shadow-md backdrop-blur-md"
-              : "bg-gradient-to-b from-black/150 to-slate-700/20 text-white border-slate-50/20"
+          className={`flex justify-between items-center gap-4 rounded-full px-3 py-1 border 
+             
+              bg-gradient-to-b from-black/150 to-slate-700/20 text-white border-slate-50/20
           }`}
           aria-label="Main navigation"
         >
           <p>farrasnazhif</p>
           <button className="cursor-pointer">
-            <Sun className="w-4 h-4" />
+            <Sun className="w-5 h-5" />
           </button>
         </nav>
 
