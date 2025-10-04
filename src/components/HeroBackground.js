@@ -58,7 +58,7 @@ export default function HeroBackground() {
           ease: "easeInOut",
           delay: 0.4,
         }}
-        className="hidden xl:absolute bottom-1/4 left-1/4 -translate-x-1/2 translate-y-1/2 w-[6rem] h-[6rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-tr from-black to-slate-200/20 rotate-12"
+        className="hidden lg:block absolute bottom-1/4 left-1/4 -translate-x-1/2 translate-y-1/2 w-[6rem] h-[6rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-tr from-black to-slate-200/20 rotate-12"
       />
 
       {/* center left top */}
@@ -72,7 +72,7 @@ export default function HeroBackground() {
           ease: "easeInOut",
           delay: 0,
         }}
-        className="hidden xl:absolute top-1/4 left-1/4 -translate-x-[12rem] translate-y-1/2 w-[3rem] h-[3rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-br from-black to-slate-200/20 rotate-12"
+        className="hidden lg:block absolute top-1/4 left-1/4 -translate-x-[12rem] translate-y-1/2 w-[3rem] h-[3rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-br from-black to-slate-200/20 rotate-12"
       />
 
       {/* center top right */}
@@ -86,7 +86,7 @@ export default function HeroBackground() {
           ease: "easeInOut",
           delay: 0,
         }}
-        className="hidden xl:absolute top-1/4 right-1/4 -translate-x-12 translate-y-16 w-[4rem] h-[4rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-bl from-black to-slate-200/20 rotate-12"
+        className="hidden lg:block absolute top-1/4 right-1/4 -translate-x-12 translate-y-16 w-[4rem] h-[4rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-bl from-black to-slate-200/20 rotate-12"
       />
 
       {/* center right bottom */}
@@ -100,7 +100,7 @@ export default function HeroBackground() {
           ease: "easeInOut",
           delay: 0.2,
         }}
-        className="hidden xl:absolute top-0 right-0 -translate-x-[8rem] translate-y-[22rem] w-[12rem] h-[12rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-bl from-black to-slate-200/20 rotate-[25deg]"
+        className="hidden lg:block absolute top-0 right-0 -translate-x-[8rem] translate-y-[22rem] w-[12rem] h-[12rem] rounded-full -z-10 border border-slate-200/20 bg-gradient-to-bl from-black to-slate-200/20 rotate-[25deg]"
       />
 
       {/* right bottom */}
