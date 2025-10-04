@@ -42,10 +42,11 @@ export default function Hero() {
         animate="show"
       >
         <motion.h1
-          className="sm:text-7xl text-5xl font-medium "
+          className="sm:text-7xl text-5xl font-semibold text-center text-transparent bg-clip-text 
+             bg-gradient-to-r from-gray-400 via-gray-300 to-gray-200"
           variants={item}
         >
-          Hi! I&apos;m Farras
+          Hey! I&apos;m Farras
         </motion.h1>
 
         <motion.p
