@@ -42,19 +42,18 @@ export default function Hero() {
         animate="show"
       >
         <motion.h1
-          className="sm:text-7xl text-5xl font-semibold text-center text-transparent bg-clip-text 
+          className="sm:text-7xl text-5xl font-bold text-center text-transparent bg-clip-text 
              bg-gradient-to-r from-gray-400 via-gray-300 to-gray-200"
           variants={item}
         >
-          Hey! I&apos;m Farras
+          Design Reality
         </motion.h1>
 
         <motion.p
-          className="max-w-sm text-sm sm:text-lg sm:max-w-2xl text-center"
+          className="max-w-sm text-sm sm:text-xl sm:max-w-2xl text-center mt-4"
           variants={item}
         >
-          I design and build polished, user-friendly interfaces with React,
-          focusing on simplicity, performance, and seamless interactions.
+          Hello I&apos;m Farras - a Web Developer
         </motion.p>
 
         <motion.div

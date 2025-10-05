@@ -17,8 +17,11 @@ export default function About() {
 
       {/* Text content */}
       <div className="relative z-10 w-full lg:w-1/2 text-center lg:text-left space-y-4 -translate-y-5">
-        <h1 className="text-4xl lg:text-5xl font-semibold text-white ">
-          Hey! I’m Farras
+        <h1
+          className="text-4xl lg:text-5xl font-semibold text-transparent bg-clip-text 
+             bg-gradient-to-r from-gray-400 via-gray-300 to-gray-200"
+        >
+          Yo! I&apos;m Farras
         </h1>
         <p className="text-gray-300 leading-relaxed max-w-[400px]">
           I’m Farras Nazhif, a Web Developer and Informatics Engineering student
