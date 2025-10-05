@@ -28,7 +28,7 @@ export default function About() {
   return (
     <div
       ref={wrapperRef}
-      className="relative bg-gradient-to-t from-black via-black to-green-700/20 font-sans flex flex-col lg:flex-row justify-center items-center min-h-screen gap-8 lg:gap-16 overflow-hidden px-6 lg:px-20"
+      className="relative bg-gradient-to-t from-black/150 to-green-700/20 font-sans flex flex-col lg:flex-row justify-center items-center min-h-screen gap-8 lg:gap-16 overflow-hidden px-6 lg:px-20"
     >
       {/* Avatar */}
       <motion.div
