@@ -12,7 +12,7 @@ import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
 export default function ProjectSection() {
   return (
-    <section className="px-6 md:px-[12rem] py-[8rem] bg-gradient-to-r from-green-900/30 via-black to-green-900/30 text-white">
+    <section className="px-6 md:px-[12rem] py-[6rem] bg-gradient-to-r from-green-900/30 via-black to-green-900/30 text-white">
       <div className="flex flex-col justify-center items-center gap-12 py-12">
         <h3 className="text-5xl font-bold mb-16 border-b-2 border-cyan-500 inline-block pb-2 tracking-wide">
           PROJECTS
