@@ -14,10 +14,10 @@ import {
 import Button from "./ui/Button/Button";
 import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
-export default function Portfolio() {
+export default function Hero() {
   return (
     <div className="bg-black text-white font-sans ">
-      <section className="flex flex-col md:flex-row justify-center lg:gap-[8rem] gap-[1rem] items-center px-8 py-28 bg-gradient-to-r from-gray-900 via-black to-gray-900 min-h-[95vh]">
+      <section className="flex flex-col md:flex-row justify-center lg:gap-[8rem] gap-[1rem] items-center px-8 py-28 bg-gradient-to-r from-cyan-900/30 via-black to-cyan-900/30 min-h-[95vh]">
         <div className="max-w-lg">
           <p className=" text-slate-200 text-lg mb-3 tracking-wide">
             Say Hi! From

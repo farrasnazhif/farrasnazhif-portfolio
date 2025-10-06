@@ -1,32 +1,37 @@
+// /hooks/useBoop.js
+"use client";
 import { useState, useEffect, useCallback } from "react";
 
 export function useBoop({
+  x = 0,
   y = 0,
-  timing = 300, // duration in ms
+  rotation = 0,
+  scale = 1,
+  timing = 150,
 }) {
   const [isBooped, setIsBooped] = useState(false);
-
-  useEffect(() => {
-    if (!isBooped) {
-      return;
-    }
-    const timeoutId = window.setTimeout(() => {
-      setIsBooped(false);
-    }, timing);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-    };
-  }, [isBooped, timing]);
 
   const trigger = useCallback(() => {
     setIsBooped(true);
   }, []);
 
-  // style that animates translateY when booped
+  useEffect(() => {
+    if (!isBooped) return;
+
+    const timeoutId = setTimeout(() => {
+      setIsBooped(false);
+    }, timing);
+
+    return () => clearTimeout(timeoutId);
+  }, [isBooped, timing]);
+
   const style = {
-    transform: isBooped ? `translateY(${y}px)` : `translateY(0px)`,
-    transition: `transform ${timing}ms ease-in-out`,
+    display: "inline-block",
+    backfaceVisibility: "hidden",
+    transform: isBooped
+      ? `translate(${x}px, ${y}px) rotate(${rotation}deg) scale(${scale})`
+      : `translate(0px, 0px) rotate(0deg) scale(1)`,
+    transition: `transform ${timing}ms ease`,
   };
 
   return [style, trigger];

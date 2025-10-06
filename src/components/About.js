@@ -12,7 +12,7 @@ import {
 
 export default function About() {
   return (
-    <section className="text-center px-8 py-20 bg-black">
+    <section className="text-center px-8 py-[8rem] bg-gradient-to-r from-red-900/30 via-black to-red-900/30">
       <div className="flex flex-col justify-center items-center gap-12 py-12">
         <h3 className="text-5xl font-bold">ABOUT ME</h3>
         <div className="flex items-center justify-center space-x-4">

@@ -19,15 +19,13 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
       smoothTouch: false,
       direction: "vertical",
       gestureDirection: "vertical",
     });
-
-    window.scrollTo(0, 0);
 
     function raf(time) {
       lenis.raf(time);
