@@ -13,17 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export const metadata = {
-  title: "My Portfolio | Built with Next.js",
-  description:
-    "A modern portfolio built using Next.js, React, and Tailwind CSS.",
+  title: "Farras Nazhif",
+  description: "Welcome to My Portfolio!",
   keywords: ["Next.js", "React", "Portfolio", "Frontend Developer"],
   authors: [{ name: "Your Name", url: "https://farrasnazhif.com" }],
   openGraph: {
-    title: "My Portfolio",
-    description:
-      "A sleek portfolio website showcasing projects and creativity.",
+    title: "Farras Nazhif",
+    description: "Welcome to My Portfolio!",
     url: "https://farrasnazhif.com",
-    siteName: "My Portfolio",
+    siteName: "Farras Nazhif",
     images: [
       {
         url: "https://farrasnazhif.com/og-image.jpg",
@@ -37,8 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: "farrasnazhif",
-    title: "My Portfolio",
-    description: "A modern portfolio built with Next.js",
+    title: "Farras Nazhif",
+    description: "Welcome to My Portfolio!",
     creator: "@farrasnazhif",
     images: ["https://yourwebsite.com/og-image.jpg"],
   },
