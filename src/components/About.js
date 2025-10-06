@@ -53,11 +53,11 @@ export default function About() {
 
       <div className="flex items-center justify-center space-x-4 my-12">
         {/* Left line */}
-        <div className="h-[2px] w-5 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-400/20"></div>
+        {/* <div className="h-[2px] w-5 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-400/20"></div> */}
         {/* Center dot */}
         <div className="w-1 h-1 rounded-full bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"></div>
         {/* Right line */}
-        <div className="h-[2px] w-5 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-400/20"></div>
+        {/* <div className="h-[2px] w-5 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-400/20"></div> */}
       </div>
 
       <div className="flex flex-col justify-center items-center gap-6 ">
