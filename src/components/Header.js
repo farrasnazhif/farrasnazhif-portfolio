@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FileText, Folder, Home, Sun, User } from "react-feather";
 import Dropdown from "./Dropdown";
 import ChevronBoop from "./ChevronBoop/ChevronBoop";
+import Link from "next/link";
 
 export default function Header() {
   const [scrolled, setScrolled] = React.useState(false);
@@ -73,16 +74,16 @@ export default function Header() {
           className="flex justify-center items-center gap-8"
           aria-label="Main navigation"
         >
-          <a href="#" className="font-medium hover:text-slate-400">
+          <Link href="/" className="font-medium hover:text-slate-400">
             Home
-          </a>
+          </Link>
           <a href="#" className="font-medium hover:text-slate-400">
             Blog
           </a>
           <a href="#" className="font-medium hover:text-slate-400">
             Projects
           </a>
-          <a href="#" className="font-medium hover:text-slate-400">
+          <a href="about" className="font-medium hover:text-slate-400">
             About
           </a>
           <a href="#" className="font-medium hover:text-slate-400">

@@ -1,114 +1,78 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
 import React from "react";
+import { Code, Monitor } from "react-feather";
+import {
+  SiNextdotjs,
+  SiPrisma,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 export default function About() {
-  const [isShown, setIsShown] = React.useState(false);
-  const wrapperRef = React.useRef(null);
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        setIsShown(entry.isIntersecting);
-      },
-      { threshold: 0.5 } // triggers when 20% of section is visible
-    );
-
-    const current = wrapperRef.current;
-    if (current) observer.observe(current);
-
-    return () => {
-      if (current) observer.unobserve(current);
-    };
-  }, []);
-
   return (
-    <div
-      ref={wrapperRef}
-      className="relative bg-gradient-to-t from-black/150 to-green-700/20 font-sans flex flex-col lg:flex-row justify-center items-center min-h-screen gap-8 lg:gap-16 overflow-hidden px-6 lg:px-20"
-    >
-      {/* Avatar */}
-      <motion.div
-        initial={{ y: 500 }}
-        animate={{
-          y: isShown ? 0 : 500,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 700,
-          damping: 200,
-          restDelta: 0.01,
-        }}
-        className="relative z-0 flex justify-center lg:justify-start w-full lg:w-1/2 mb-10 lg:mb-0"
-      >
-        <Image
-          src="/assets/avatar.png"
-          alt="Avatar"
-          width={900}
-          height={900}
-          className="drop-shadow-xl select-none -translate-y-5"
-          priority
-        />
-      </motion.div>
-
-      {/* Text content */}
-      <div
-        // initial={{ y: 100, opacity: 0 }}
-        // animate={{
-        //   y: isShown ? 0 : 100,
-        //   opacity: isShown ? 1 : 0,
-        // }}
-        // transition={{
-        //   type: "spring",
-        //   stiffness: 200,
-        //   damping: 25,
-        //   delay: 0.2, // staggers after avatar
-        // }}
-        className="relative z-10 w-full lg:w-1/2 text-center lg:text-left space-y-4 -translate-y-5"
-      >
-        <h1
-          className="text-4xl lg:text-5xl font-semibold text-transparent bg-clip-text 
-             bg-gradient-to-r from-gray-400 via-gray-300 to-gray-200"
-        >
-          Yo! I&apos;m Farras
-        </h1>
-
-        <p className="text-gray-300 leading-relaxed max-w-[400px]">
-          I’m Farras Nazhif, a Web Developer and Informatics Engineering student
-          at Institut Teknologi Sepuluh Nopember.
+    <section className="text-center px-8 py-20 bg-black">
+      <div className="flex flex-col justify-center items-center gap-12 py-12">
+        <h3 className="text-5xl font-bold">ABOUT ME</h3>
+        <div className="flex items-center justify-center space-x-4">
+          {/* Left line */}
+          <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-400/20"></div>
+          {/* Center dot */}
+          <div className="w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"></div>
+          {/* Right line */}
+          <div className="h-[2px] w-12 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-400/20"></div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-8 text-center">
+        <p className="text-slate-200 max-w-xl mx-auto text-md leading-relaxed">
+          Hey there! I&apos;m{" "}
+          <span className="font-semibold text-cyan-400">Farras Nazhif</span>, a
+          web developer and Informatics Engineering student at Institut
+          Teknologi Sepuluh Nopember.
         </p>
 
-        <p className="text-gray-300 leading-relaxed max-w-[400px]">
-          I’m continuously sharpening my skills to create responsive, dynamic,
-          and visually clean web applications. My current favorite toolkit
-          includes <strong>HTML, CSS, JavaScript, React, Next.js,</strong> and{" "}
-          <strong>Prisma</strong>.
+        <p className="text-slate-200 max-w-xl mx-auto text-md leading-relaxed">
+          I love building things for the web. Clean, responsive, and a little
+          bit fancy when it needs to be. I&apos;m always trying out new stuff to
+          make my projects smoother and more fun to use.
         </p>
 
-        <button
-          className="rounded-lg bg-green-800/20 border border-solid border-black/[.08] dark:border-white/[.145] 
-          transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] 
-          hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 
-          w-full sm:w-auto md:w-[158px]"
-        >
-          More About Me
-        </button>
+        <p className="text-slate-300 max-w-xl mx-auto text-md leading-relaxed italic">
+          Here are the tools I&apos;ve been vibing with lately.
+        </p>
+
+        <div className="flex justify-center items-center gap-6 text-4xl">
+          <SiNextdotjs />
+          <SiReact />
+          <SiTypescript />
+          <SiTailwindcss />
+          <SiPrisma />
+        </div>
       </div>
 
-      {/* Cloud background (above avatar) */}
-      <div className="absolute bottom-0 left-0 w-full z-10 overflow-hidden">
-        <Image
-          src="/assets/clouds.png"
-          alt="Clouds"
-          width={1600}
-          height={400}
-          className="w-full object-cover translate-y-20"
-          priority
-        />
+      <div className="flex items-center justify-center space-x-4 my-12">
+        {/* Left line */}
+        <div className="h-[2px] w-5 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-400/20"></div>
+        {/* Center dot */}
+        <div className="w-1 h-1 rounded-full bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.8)]"></div>
+        {/* Right line */}
+        <div className="h-[2px] w-5 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-400/20"></div>
       </div>
-    </div>
+
+      <div className="flex flex-col justify-center items-center gap-6 ">
+        <h4 className="relative text-2xl font-bold text-white">What I Do</h4>
+        <div className="flex gap-4">
+          <div className="flex items-center gap-2 bg-transparent p-3 border border-blue-700 rounded-lg">
+            <Monitor className="w-4 h-4" />
+            Frontend Development
+          </div>
+          <div className="flex items-center gap-2 bg-transparent p-3 border border-green-700 rounded-lg">
+            <Code className="w-4 h-4" />
+            Informatics Engineering
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

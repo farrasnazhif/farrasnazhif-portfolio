@@ -1,0 +1,22 @@
+.glowButton {
+  position: relative;
+  isolation: isolate;
+}
+
+.glowButton .light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120px circle at var(--x) var(--y),
+    rgba(34, 211, 238, 0.35),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glowButton:hover .light {
+  opacity: 1;
+}

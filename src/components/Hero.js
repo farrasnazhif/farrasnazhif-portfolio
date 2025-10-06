@@ -1,75 +1,119 @@
-"use client";
+import Image from "next/image";
+import React from "react";
+import {
+  ArrowDown,
+  Code,
+  CornerDownLeft,
+  File,
+  GitHub,
+  Instagram,
+  Monitor,
+  Play,
+  Sun,
+} from "react-feather";
+import Button from "./ui/Button/Button";
+import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
-import { motion } from "framer-motion";
-import HeroBackground from "./HeroBackground";
-
-const container = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 30,
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 20,
-    },
-  },
-};
-
-export default function Hero() {
+export default function Portfolio() {
   return (
-    <div className="relative bg-gradient-to-b from-black/150 to-green-700/20 font-sans flex justify-center items-center min-h-screen p-0 gap-16 overflow-hidden">
-      <HeroBackground />
+    <div className="bg-black text-white font-sans ">
+      <section className="flex flex-col md:flex-row justify-center gap-[8rem] items-center px-8 py-28 bg-gradient-to-r from-gray-900 via-black to-gray-900 min-h-[95vh]">
+        <div className="max-w-lg">
+          <p className=" text-slate-200 text-lg mb-3 tracking-wide">
+            Say Hi! From
+          </p>
+          <h2 className="text-6xl md:text-6xl font-extrabold mb-5 leading-none">
+            FARRAS NAZHIF
+          </h2>
+          <p className="text-slate-200 mb-8 text-md md:text-md">
+            I build smooth, dynamic, and user-focused interfaces that make ideas
+            come alive — one React component at a time.
+          </p>
+          <div className="flex gap-2 mb-8">
+            <Button className="flex items-center gap-2">
+              Let&apos;s Connect
+              <ArrowBoop />
+            </Button>
+            <Button variant="outline">More About Me</Button>
+          </div>
+          <div className="flex space-x-4">
+            <GitHub strokeWidth={1} />
+            <Instagram strokeWidth={1} />
+            <File strokeWidth={1} />
+          </div>
+        </div>
 
-      <motion.main
-        className="flex flex-col gap-2 row-start-2 items-center relative z-10"
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.h1
-          className="sm:text-7xl text-5xl font-bold text-center text-transparent bg-clip-text 
-             bg-gradient-to-r from-gray-400 via-gray-300 to-gray-200"
-          variants={item}
-        >
-          Design Reality
-        </motion.h1>
+        <div className="mt-16 md:mt-0">
+          <div className="relative w-[22rem] h-[22rem] md:w-[26rem] md:h-[26rem] flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full  "></div>
+            <Image
+              src="/assets/avatar.png"
+              alt="Avatar"
+              width={900}
+              height={900}
+              className="drop-shadow-2xl select-none relative z-10"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
-        <motion.p
-          className="max-w-sm text-sm sm:text-xl sm:max-w-2xl text-center mt-4"
-          variants={item}
-        >
-          Hello I&apos;m Farras - a Web Developer
-        </motion.p>
+      {/* Testimonials */}
+      {/* <section className="px-8 py-20 bg-black text-center">
+        <h3 className="text-2xl font-bold mb-10">TESTIMONIALS</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              name: "MARCUS",
+              role: "Co Founder",
+              text: "Perfect communication and exceptional skills. This guy is king.",
+            },
+            {
+              name: "PETER",
+              role: "Manager",
+              text: "Did a great job. Understood all the requirements.",
+            },
+            {
+              name: "JANE",
+              role: "CEO",
+              text: "Jimmy was wonderful to work with. Will definitely hire him again.",
+            },
+          ].map((t, i) => (
+            <div
+              key={i}
+              className="bg-purple-700 p-8 rounded-md text-white shadow-md"
+            >
+              <h4 className="font-bold mb-1 text-lg">{t.name}</h4>
+              <p className="text-sm mb-3 text-gray-200">{t.role}</p>
+              <p className="text-sm">{t.text}</p>
+            </div>
+          ))}
+        </div>
+      </section> */}
 
-        <motion.div
-          className="flex gap-4 items-center flex-col sm:flex-row mt-6"
-          variants={item}
-        >
-          <button
-            className="rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Let&apos;s Connect
+      {/* Contact */}
+      {/* <section className="px-8 py-20 bg-black text-center">
+        <h3 className="text-2xl font-bold mb-8">I AM READY TO CONSULT YOU</h3>
+        <form className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-black">
+          <input placeholder="My Name Is" className="px-4 py-2 rounded-sm" />
+          <input
+            placeholder="I Am Interested In"
+            className="px-4 py-2 rounded-sm"
+          />
+          <input
+            placeholder="Message"
+            className="px-4 py-2 rounded-sm md:col-span-2"
+          />
+          <button className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-sm font-semibold">
+            SEND
           </button>
-        </motion.div>
-      </motion.main>
+        </form>
+        <div className="flex justify-center mt-10 space-x-6 text-gray-400 text-sm">
+          <p>📞 +92 455 478 112</p>
+          <p>📍 Defense Phase 3, Lahore Pakistan</p>
+          <p>📧 videoeditor@gmail.com</p>
+        </div>
+      </section> */}
     </div>
   );
 }
