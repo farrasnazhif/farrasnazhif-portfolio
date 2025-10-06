@@ -1,6 +1,6 @@
-// /hooks/useBoop.js
 "use client";
-import { useState, useEffect, useCallback } from "react";
+
+import React from "react";
 
 export function useBoop({
   x = 0,
@@ -9,13 +9,13 @@ export function useBoop({
   scale = 1,
   timing = 150,
 }) {
-  const [isBooped, setIsBooped] = useState(false);
+  const [isBooped, setIsBooped] = React.useState(false);
 
-  const trigger = useCallback(() => {
+  const trigger = React.useCallback(() => {
     setIsBooped(true);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isBooped) return;
 
     const timeoutId = setTimeout(() => {

@@ -9,6 +9,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import Tooltip from "./ui/Tooltip/Tooltip";
 
 export default function About() {
   return (
@@ -43,11 +44,25 @@ export default function About() {
         </p>
 
         <div className="flex justify-center items-center gap-6 text-4xl">
-          <SiNextdotjs />
-          <SiReact />
-          <SiTypescript />
-          <SiTailwindcss />
-          <SiPrisma />
+          <Tooltip content="Next Js" position="top">
+            <SiNextdotjs />
+          </Tooltip>
+
+          <Tooltip content="React Js" position="top">
+            <SiReact />
+          </Tooltip>
+
+          <Tooltip content="Typescript" position="top">
+            <SiTypescript />
+          </Tooltip>
+
+          <Tooltip content="Tailwind CSS" position="top">
+            <SiTailwindcss />
+          </Tooltip>
+
+          <Tooltip content="Prisma" position="top">
+            <SiPrisma />
+          </Tooltip>
         </div>
       </div>
 

@@ -1,16 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import {
-  ArrowDown,
-  Code,
-  CornerDownLeft,
-  File,
-  GitHub,
-  Instagram,
-  Monitor,
-  Play,
-  Sun,
-} from "react-feather";
+import { File, GitHub, Instagram } from "react-feather";
 import Button from "./ui/Button/Button";
 import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
@@ -38,6 +28,7 @@ export default function Hero() {
           </div>
           <div className="flex space-x-4">
             <GitHub strokeWidth={1} />
+
             <Instagram strokeWidth={1} />
             <File strokeWidth={1} />
           </div>
