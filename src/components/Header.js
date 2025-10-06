@@ -77,18 +77,18 @@ export default function Header() {
           <Link href="/" className="font-medium hover:text-slate-400">
             Home
           </Link>
-          <a href="#" className="font-medium hover:text-slate-400">
+          <Link href="blog" className="font-medium hover:text-slate-400">
             Blog
-          </a>
-          <a href="#" className="font-medium hover:text-slate-400">
+          </Link>
+          <Link href="project" className="font-medium hover:text-slate-400">
             Projects
-          </a>
-          <a href="about" className="font-medium hover:text-slate-400">
+          </Link>
+          <Link href="about" className="font-medium hover:text-slate-400">
             About
-          </a>
-          <a href="#" className="font-medium hover:text-slate-400">
+          </Link>
+          <Link href="goodies" className="font-medium hover:text-slate-400">
             Goodies
-          </a>
+          </Link>
         </nav>
 
         <div className="hidden xl:flex items-center gap-3">
