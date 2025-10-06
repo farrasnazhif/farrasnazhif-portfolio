@@ -62,7 +62,7 @@ export default function About() {
 
       <div className="flex flex-col justify-center items-center gap-6 ">
         <h4 className="relative text-2xl font-bold text-white">What I Do</h4>
-        <div className="flex gap-4">
+        <div className="lg:flex lg:flex-row flex flex-col gap-4">
           <div className="flex items-center gap-2 bg-transparent p-3 border border-blue-700 rounded-lg">
             <Monitor className="w-4 h-4" />
             Frontend Development

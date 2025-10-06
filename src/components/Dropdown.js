@@ -38,7 +38,7 @@ export default function Dropdown({ trigger, children, className }) {
       {open && (
         <div
           className={clsx(
-            "absolute right-0 mt-3 w-72 rounded-2xl bg-black/90 backdrop-blur-md shadow-lg ring-1 ring-white/10 z-5",
+            "absolute right-0 mt-3 w-72 rounded-2xl bg-black backdrop-blur-md shadow-lg ring-1 ring-white/10 z-5",
             className
           )}
         >

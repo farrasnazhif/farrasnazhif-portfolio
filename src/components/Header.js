@@ -44,7 +44,7 @@ export default function Header() {
               width: scrolled ? "40%" : "100%",
               borderRadius: scrolled ? "1.25rem" : "0rem",
               backgroundColor: scrolled
-                ? "rgba(0,0,0,0.55)"
+                ? "rgba(12, 74, 110, 0.5)"
                 : "rgba(0,0,0,0.0)",
               boxShadow: scrolled
                 ? "inset 0 0 12px rgba(255,255,255,0.05), 0 8px 25px rgba(0,0,0,0.3)"
@@ -67,7 +67,7 @@ export default function Header() {
       {/* Desktop */}
       <div className="hidden xl:flex max-w-[1200px] mx-auto px-6 py-4 items-center justify-between gap-4">
         <button className="hidden lg:block font-bold text-2xl cursor-pointer text-slate-400">
-          FN
+          <Link href="/">FN</Link>
         </button>
 
         <nav
@@ -99,14 +99,16 @@ export default function Header() {
       </div>
 
       {/* Mobile */}
-      <div className="xl:hidden max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-4 relative">
-        <div className="font-bold text-xl cursor-pointer">FN</div>
+      <div className="xl:hidden max-w-[1200px] mx-auto px-6 py-2 flex items-center justify-between gap-4 relative bg-cyan-900/20 backdrop-blur-lg shadow-lg">
+        <button className="font-bold text-2xl cursor-pointer text-slate-400">
+          <Link href="/">FN</Link>
+        </button>
 
         <nav
-          className={`flex justify-between items-center gap-4 rounded-full px-3 py-1 border 
+          className="flex justify-between items-center gap-4 rounded-full px-3 py-1 border 
              
-              bg-gradient-to-b from-black/150 to-slate-700/20 text-white border-slate-50/20
-          }`}
+              bg-gradient-to-b from-black/70 to-slate-700/20 text-white border-slate-50/20
+          "
           aria-label="Main navigation"
         >
           <p>farrasnazhif</p>

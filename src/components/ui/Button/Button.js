@@ -28,7 +28,7 @@ export default function Button({
       {...rest}
       onMouseMove={handleMouseMove}
       className={clsx(
-        "relative overflow-hidden font-light px-8 py-3 rounded-md transition-all duration-200 focus:outline-none ",
+        "relative overflow-hidden font-light px-4 py-3 rounded-md transition-all duration-200 focus:outline-none ",
         variants[variant],
         variant === "primary" && styles.glowButton,
         className
