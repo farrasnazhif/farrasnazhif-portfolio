@@ -7,8 +7,9 @@ import {
   SiTypescript,
   SiVercel,
 } from "react-icons/si";
-import Button from "./ui/Button/Button";
-import ArrowBoop from "./ArrowBoop/ArrowBoop";
+
+import ArrowBoop from "@/components/ArrowBoop/ArrowBoop";
+import Button from "@/components/ui/Button/Button";
 
 export default function ProjectSection() {
   return (

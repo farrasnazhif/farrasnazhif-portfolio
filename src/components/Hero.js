@@ -3,6 +3,7 @@ import React from "react";
 import { File, GitHub, Instagram } from "react-feather";
 import Button from "./ui/Button/Button";
 import ArrowBoop from "./ArrowBoop/ArrowBoop";
+import Avatar from "./Avatar/Avatar";
 
 export default function Hero() {
   return (
@@ -45,6 +46,7 @@ export default function Hero() {
               className="drop-shadow-2xl select-none relative z-10"
               priority
             />
+            {/* <Avatar src="/assets/avatar2.png" size={140} /> */}
           </div>
         </div>
       </section>
