@@ -1,14 +1,13 @@
-import Image from "next/image";
 import React from "react";
 import { File, GitHub, Instagram } from "react-feather";
 import Button from "./ui/Button/Button";
 import ArrowBoop from "./ArrowBoop/ArrowBoop";
-import Avatar from "./Avatar/Avatar";
+import DraggableCircles from "./Goodies/DraggableCircles";
 
 export default function Hero() {
   return (
     <div className="bg-black text-white font-sans ">
-      <section className="flex flex-col md:flex-row justify-center lg:gap-[8rem] gap-[1rem] items-center px-8 py-28 bg-gradient-to-r from-cyan-900/30 via-black to-cyan-900/30 min-h-[95vh]">
+      <section className="flex flex-col md:flex-row justify-center lg:gap-[8rem] gap-[1rem] items-center px-8 pt-28 lg:pt-0 bg-gradient-to-r from-cyan-900/30 via-black to-cyan-900/30 min-h-[95vh]">
         <div className="max-w-lg">
           <p className=" text-slate-200 text-lg mb-3 tracking-wide">
             Say Hi! From
@@ -38,51 +37,18 @@ export default function Hero() {
         <div className="mt-16 md:mt-0">
           <div className="relative w-[22rem] h-[22rem] md:w-[26rem] md:h-[26rem] flex items-center justify-center">
             <div className="absolute inset-0 rounded-full  "></div>
-            <Image
+            {/* <Image
               src="/assets/avatar.png"
               alt="Avatar"
               width={900}
               height={900}
               className="drop-shadow-2xl select-none relative z-10"
               priority
-            />
-            {/* <Avatar src="/assets/avatar2.png" size={140} /> */}
+            /> */}
+            <DraggableCircles />
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {/* <section className="px-8 py-20 bg-black text-center">
-        <h3 className="text-2xl font-bold mb-10">TESTIMONIALS</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              name: "MARCUS",
-              role: "Co Founder",
-              text: "Perfect communication and exceptional skills. This guy is king.",
-            },
-            {
-              name: "PETER",
-              role: "Manager",
-              text: "Did a great job. Understood all the requirements.",
-            },
-            {
-              name: "JANE",
-              role: "CEO",
-              text: "Jimmy was wonderful to work with. Will definitely hire him again.",
-            },
-          ].map((t, i) => (
-            <div
-              key={i}
-              className="bg-purple-700 p-8 rounded-md text-white shadow-md"
-            >
-              <h4 className="font-bold mb-1 text-lg">{t.name}</h4>
-              <p className="text-sm mb-3 text-gray-200">{t.role}</p>
-              <p className="text-sm">{t.text}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* Contact */}
       {/* <section className="px-8 py-20 bg-black text-center">
