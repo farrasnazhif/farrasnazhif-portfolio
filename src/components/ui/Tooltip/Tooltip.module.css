@@ -1,68 +1,73 @@
+/* 3D Glassmorphic Tooltip by Kelvin — React version */
+
 .tooltipContainer {
   position: relative;
   display: inline-block;
 }
 
-.tooltipBox {
+/* Tooltip content */
+.tooltip {
   position: absolute;
-  z-index: 50;
-  background-color: #393e46;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
   white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
   opacity: 0;
-  animation: fadeIn 0.25s ease-out forwards;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10;
 }
 
-.tooltipArrow {
+/* Tooltip arrow */
+.tooltip::after {
+  content: "";
   position: absolute;
-  width: 0;
-  height: 0;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
   border-style: solid;
+  border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.tooltipArrow_top {
-  bottom: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 6px 0 6px;
-  border-color: #393e46 transparent transparent transparent;
+/* Hover state */
+.tooltipContainer:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-15px);
 }
 
-.tooltipArrow_bottom {
-  top: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 0 6px 6px 6px;
-  border-color: transparent transparent #393e46 transparent;
+.tooltipContainer:hover .tooltip::after {
+  border-color: rgba(255, 255, 255, 0.6) transparent transparent transparent;
 }
 
-.tooltipArrow_left {
-  top: 50%;
-  right: -3px;
-  transform: translateY(-50%);
-  border-width: 6px 0 6px 6px;
-  border-color: transparent transparent transparent #393e46;
+/* Tooltip trigger (button) */
+.tooltipTrigger {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tooltipArrow_right {
-  top: 50%;
-  left: -3px;
-  transform: translateY(-50%);
-  border-width: 6px 6px 6px 0;
-  border-color: transparent #393e46 transparent transparent;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(3px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.tooltipTrigger:hover {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
 }

@@ -3,13 +3,6 @@
 import Tooltip from "@/components/ui/Tooltip/Tooltip";
 import React from "react";
 import { Code, Monitor } from "react-feather";
-import {
-  SiNextdotjs,
-  SiPrisma,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
 
 export default function About() {
   return (
@@ -44,7 +37,7 @@ export default function About() {
         </p>
 
         <div className="flex justify-center items-center gap-6 text-4xl">
-          <Tooltip content="Next Js" position="top">
+          {/* <Tooltip content="Next Js" position="top">
             <SiNextdotjs />
           </Tooltip>
 
@@ -62,7 +55,7 @@ export default function About() {
 
           <Tooltip content="Prisma" position="top">
             <SiPrisma />
-          </Tooltip>
+          </Tooltip> */}
         </div>
       </div>
 

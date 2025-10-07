@@ -37,15 +37,8 @@ export default function Hero() {
         <div className="mt-16 md:mt-0">
           <div className="relative w-[22rem] h-[22rem] md:w-[26rem] md:h-[26rem] flex items-center justify-center">
             <div className="absolute inset-0 rounded-full  "></div>
-            {/* <Image
-              src="/assets/avatar.png"
-              alt="Avatar"
-              width={900}
-              height={900}
-              className="drop-shadow-2xl select-none relative z-10"
-              priority
-            /> */}
-            <DraggableCircles />
+
+            {/* <DraggableCircles /> */}
           </div>
         </div>
       </section>

@@ -1,13 +1,5 @@
 import Image from "next/image";
 
-import {
-  SiNextdotjs,
-  SiPrisma,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-} from "react-icons/si";
-
 import ArrowBoop from "@/components/ArrowBoop/ArrowBoop";
 import Button from "@/components/ui/Button/Button";
 
@@ -67,14 +59,14 @@ export default function ProjectSection() {
           </ul>
 
           <div className="flex items-center gap-4 pt-3">
-            <SiNextdotjs className="text-white w-6 h-6" title="Next.js" />
+            {/* <SiNextdotjs className="text-white w-6 h-6" title="Next.js" />
             <SiTailwindcss
               className="text-sky-400 w-6 h-6"
               title="Tailwind CSS"
             />
             <SiTypescript className="text-sky-400 w-6 h-6" title="Typescript" />
             <SiPrisma className="text-green-400 w-6 h-6" title="Prisma" />
-            <SiVercel className="text-white w-6 h-6" title="Vercel" />
+            <SiVercel className="text-white w-6 h-6" title="Vercel" /> */}
           </div>
 
           <Button className="flex items-center gap-2 mt-8">

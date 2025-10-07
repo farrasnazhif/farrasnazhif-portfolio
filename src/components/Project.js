@@ -1,22 +1,16 @@
 import Image from "next/image";
 
-import {
-  SiNextdotjs,
-  SiPrisma,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-} from "react-icons/si";
 import Button from "./ui/Button/Button";
 import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
 export default function ProjectSection() {
   return (
     <section className="px-6 md:px-[12rem] py-[6rem] bg-gradient-to-r from-green-900/30 via-black to-green-900/30 text-white">
-      <div className="flex flex-col justify-center items-center gap-12 py-12">
-        <h3 className="text-5xl font-bold mb-16 border-b-2 border-cyan-500 inline-block pb-2 tracking-wide">
+      <div className="flex flex-col justify-center items-center gap-8 py-12 mb-12">
+        <h3 className="text-5xl font-bold inline-block tracking-wide">
           PROJECTS
         </h3>
+        <div className="h-2 rounded-md w-65 bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-200/50"></div>
       </div>
 
       <div className="flex flex-col md:flex-row items-start justify-between gap-16">
@@ -66,14 +60,14 @@ export default function ProjectSection() {
           </ul>
 
           <div className="flex items-center gap-4 pt-3">
-            <SiNextdotjs className="text-white w-6 h-6" title="Next.js" />
+            {/* <SiNextdotjs className="text-white w-6 h-6" title="Next.js" />
             <SiTailwindcss
               className="text-sky-400 w-6 h-6"
               title="Tailwind CSS"
             />
             <SiTypescript className="text-sky-400 w-6 h-6" title="Typescript" />
             <SiPrisma className="text-green-400 w-6 h-6" title="Prisma" />
-            <SiVercel className="text-white w-6 h-6" title="Vercel" />
+            <SiVercel className="text-white w-6 h-6" title="Vercel" /> */}
           </div>
 
           <Button className="flex items-center gap-2 mt-8">
