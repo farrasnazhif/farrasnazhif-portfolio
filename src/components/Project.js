@@ -59,8 +59,8 @@ export default function Project() {
   return (
     <section className="relative flex flex-col justify-center items-center gap-[6rem] lg:gap-[4rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-cyan-900/30 via-black to-cyan-900/30">
       {/* Title */}
-      <div className="flex flex-col justify-start items-start gap-8 py-0">
-        <h3 className="text-4xl lg:text-5xl font-bold text-white">PROJECTS</h3>
+      <div className="flex flex-col justify-center items-center gap-8 py-0">
+        <h3 className="text-4xl lg:text-5xl font-bold text-white ">PROJECTS</h3>
         <div className="h-2 w-64 rounded-md bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-400/20"></div>
       </div>
 
