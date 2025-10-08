@@ -14,8 +14,7 @@ import Avatar from "./Avatar/Avatar";
 
 export default function About() {
   return (
-    <section className="relative flex flex-col lg:flex-row justify-center items-start gap-[6rem] lg:gap-[8rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-red-900/30 via-black to-red-900/30">
-      {/* Avatar */}
+    <section className="relative flex flex-col lg:flex-row justify-center items-start gap-[2rem] lg:gap-[8rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-red-900/30 via-black to-red-900/30 overflow-hidden">
       <div className="flex flex-col justify-center items-center w-full lg:w-auto mb-12 lg:mb-0 gap-16">
         <Avatar />
         <div className="flex flex-col justify-start items-start gap-6">
@@ -33,16 +32,15 @@ export default function About() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col justify-start items-start gap-10">
-        <div className="flex flex-col justify-start items-start gap-8 py-0">
+      <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start gap-10">
+        <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start  gap-8 py-0">
           <h3 className="text-4xl lg:text-5xl font-bold text-white">
             ABOUT ME
           </h3>
           <div className="h-2 w-65 rounded-md bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-400/20"></div>
         </div>
 
-        <div className="flex flex-col justify-start items-start gap-6 max-w-xl">
+        <div className="flex flex-col sm:justify-start sm:items-start justify-center items-center gap-6 max-w-xl text-justify sm:text-start">
           <p className="text-slate-200 text-md leading-relaxed">
             Hey there! I&apos;m{" "}
             <span className="font-semibold text-cyan-400">Farras Nazhif</span>,
@@ -56,7 +54,7 @@ export default function About() {
             technologies to make my projects smoother and more fun to use.
           </p>
 
-          <p className="text-slate-300 text-md leading-relaxed italic">
+          <p className="text-slate-300 text-md leading-relaxed italic text-center sm:text-start ">
             Here are the tools I&apos;ve been vibing with lately:
           </p>
 
