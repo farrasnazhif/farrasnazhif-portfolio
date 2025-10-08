@@ -5,18 +5,30 @@ import styles from "./Avatar.module.css";
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function Avatar({ src, alt = "Avatar", size = 120, className }) {
+export default function Avatar({
+  src = "/assets/avatar2.png",
+  alt = "Avatar",
+  size = 300,
+  className,
+}) {
   const [pos, setPos] = React.useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    setPos({ x: event.clientX - rect.left, y: event.clientY - rect.top });
+    setPos({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
   };
 
   return (
     <div
       onMouseMove={handleMouseMove}
-      className={clsx(styles.avatarContainer, className)}
+      className={clsx(
+        "bg-gradient-to-r from-cyan-900/100 via-cyan-800/80 to-cyan-400/40",
+        styles.avatarWrapper,
+        className
+      )}
       style={{
         width: `${size}px`,
         height: `${size}px`,
@@ -24,15 +36,18 @@ export default function Avatar({ src, alt = "Avatar", size = 120, className }) {
         "--y": `${pos.y}px`,
       }}
     >
-      <div className={styles.light}></div>
-      <Image
-        src={src}
-        alt={alt}
-        width={size}
-        height={size}
-        className={styles.avatarImage}
-        priority
-      />
+      <span className={styles.glowCircle}></span>
+
+      <div className={styles.imageContainer}>
+        <Image
+          src={src}
+          alt={alt}
+          width={size}
+          height={size}
+          className="drop-shadow-2xl select-none scale-90"
+          priority
+        />
+      </div>
     </div>
   );
 }
