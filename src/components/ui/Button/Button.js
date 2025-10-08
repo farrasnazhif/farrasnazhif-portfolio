@@ -22,7 +22,7 @@ export default function Button({
     outline:
       "bg-transparent hover:bg-slate-900/60 text-white border border-slate-700",
   };
-
+  // px-4 py-2
   return (
     <button
       {...rest}

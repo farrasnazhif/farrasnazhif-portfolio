@@ -1,86 +1,140 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink } from "react-feather";
 import {
   SiNextdotjs,
-  SiPrisma,
   SiTailwindcss,
+  SiReact,
+  SiNodedotjs,
   SiTypescript,
+  SiPrisma,
   SiVercel,
 } from "react-icons/si";
-import Button from "./ui/Button/Button";
-import ArrowBoop from "./ArrowBoop/ArrowBoop";
 
-export default function ProjectSection() {
+export default function Project() {
+  const cards = [
+    {
+      id: 1,
+      title: "SEA Catering",
+      tagline: "A seamless catering management solution.",
+      image: "/assets/sea-catering.png",
+      tech: [
+        { icon: SiNextdotjs, color: "#fff" },
+        { icon: SiTailwindcss, color: "#38BDF8" },
+        { icon: SiTypescript, color: "#3178C6" },
+        { icon: SiPrisma, color: "#dedede" },
+        { icon: SiVercel, color: "#FFFFFF" },
+      ],
+      slug: "sea-catering",
+    },
+    {
+      id: 2,
+      title: "E-Commerce",
+      tagline: "Empowering smarter online sales.",
+      image: "/assets/e-commerce.png",
+      tech: [
+        { icon: SiNextdotjs, color: "#fff" },
+        { icon: SiTailwindcss, color: "#38BDF8" },
+        { icon: SiTypescript, color: "#3178C6" },
+        { icon: SiPrisma, color: "#dedede" },
+        { icon: SiVercel, color: "#FFFFFF" },
+      ],
+      slug: "e-commerce",
+    },
+    {
+      id: 3,
+      title: "Sudoku",
+      tagline: "Sudoku game integrated with Sudoku API.",
+      image: "/assets/sudoku.png",
+      tech: [
+        { icon: SiReact, color: "#61DAFB" },
+        { icon: SiTailwindcss, color: "#38BDF8" },
+      ],
+      slug: "sudoku",
+    },
+  ];
+
   return (
-    <section className="px-6 md:px-[12rem] py-[6rem] bg-gradient-to-r from-green-900/30 via-black to-green-900/30 text-white">
-      <div className="flex flex-col justify-center items-center gap-12 py-12">
-        <h3 className="text-5xl font-bold mb-16 border-b-2 border-cyan-500 inline-block pb-2 tracking-wide">
-          PROJECTS
-        </h3>
+    <section className="relative flex flex-col justify-center items-center gap-[6rem] lg:gap-[4rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-cyan-900/30 via-black to-cyan-900/30">
+      {/* Title */}
+      <div className="flex flex-col justify-start items-start gap-8 py-0">
+        <h3 className="text-4xl lg:text-5xl font-bold text-white">PROJECTS</h3>
+        <div className="h-2 w-64 rounded-md bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-400/20"></div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start justify-between gap-16">
-        {/* left */}
-        <div className="relative group w-full md:w-2/3 bg-gradient-to-b from-slate-800/60 to-black border border-slate-700 rounded-2xl p-6 shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-500 hover:shadow-[0_0_35px_rgba(6,182,212,0.4)]">
-          <div className="flex justify-between items-center mb-6">
-            <p className="text-slate-300 text-md leading-relaxed max-w-md">
-              Catering management web app where users can schedule meal
-              deliveries and customize menus.
-            </p>
-            <ArrowBoop direction="right" />
+      <div className="flex flex-wrap gap-10 justify-center items-start">
+        {cards.map((card) => (
+          <div key={card.id} className="group relative">
+            {/* Card */}
+            <div className="relative w-[20em] h-[15em] bg-[#252525] rounded-md cursor-pointer overflow-hidden transition-all duration-300 group-hover:scale-[1.05] group-hover:shadow-[0_0_30px_rgba(0,255,200,0.2)]">
+              <div className="absolute top-0 right-0 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="w-4 h-4 rounded-md m-3 flex items-center justify-center shadow-md transition-all duration-200 hover:scale-110">
+                  <ExternalLink size={14} className="text-white" />
+                </div>
+              </div>
+
+              <div className="flex justify-center items-center h-full">
+                <Image
+                  src={card.image}
+                  width={500}
+                  height={500}
+                  alt={card.title}
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute w-[15em] h-[13em] bg-[#1E1F26]/60 rounded-md -z-10 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-2"></div>
+            </div>
+
+            <div className="flex items-center gap-3 mt-4">
+              <div className="w-9 h-9 bg-[#252525] rounded-md flex items-center justify-center">
+                <svg viewBox="0 0 80 80" className="w-6 h-6">
+                  <circle cx="40" cy="40" r="30" fill="#4fd1c5" />
+                </svg>
+              </div>
+              <div className="text-white font-sans">
+                <p className="text-sm font-bold">{card.title}</p>
+                <p className="text-xs text-gray-400">{card.tagline}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2 mt-6 items-center justify-between">
+              <div className="flex justify-center items-center gap-2 px-0 mx-0">
+                {card.tech.map((tech, index) => {
+                  const Icon = tech.icon;
+                  return (
+                    <Icon
+                      key={index}
+                      size={20}
+                      color={tech.color}
+                      className="opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:scale-110"
+                    />
+                  );
+                })}
+              </div>
+
+              <Link href={`/projects/${card.slug}`}>
+                <button
+                  className="
+                    opacity-0 
+                    translate-y-1
+                    group-hover:opacity-100 
+                    group-hover:translate-y-0 
+                    transition-all 
+                    duration-300 
+                    text-cyan-400 
+                    underline 
+                    text-xs
+                  "
+                >
+                  Read More
+                </button>
+              </Link>
+            </div>
           </div>
-
-          <div className="rounded-xl overflow-hidden border border-slate-700 bg-gradient-to-t from-cyan-500/10 via-transparent to-transparent p-1">
-            <Image
-              src="/assets/sea-catering.png"
-              alt="Sea catering project preview"
-              width={800}
-              height={450}
-              className="rounded-lg"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* right */}
-        <div className="w-full md:w-1/2 space-y-6">
-          {/* Project title */}
-          <div>
-            <h3 className="text-2xl font-bold flex items-center gap-2">
-              SEA Catering
-            </h3>
-            <p className="text-slate-400 mt-1 text-sm">Personal Project</p>
-          </div>
-
-          <p className="text-slate-300 leading-relaxed max-w-lg">
-            A full-featured catering management platform that allows users to
-            schedule deliveries and choose meal types.
-          </p>
-
-          <ul className="text-slate-200 text-sm space-y-2">
-            <li>- Customizable delivery scheduling with live updates</li>
-            <li>- Meal type options</li>
-            <li>
-              - Admin dashboard for managing menus, customers, and deliveries
-            </li>
-          </ul>
-
-          <div className="flex items-center gap-4 pt-3">
-            <SiNextdotjs className="text-white w-6 h-6" title="Next.js" />
-            <SiTailwindcss
-              className="text-sky-400 w-6 h-6"
-              title="Tailwind CSS"
-            />
-            <SiTypescript className="text-sky-400 w-6 h-6" title="Typescript" />
-            <SiPrisma className="text-green-400 w-6 h-6" title="Prisma" />
-            <SiVercel className="text-white w-6 h-6" title="Vercel" />
-          </div>
-
-          <Button className="flex items-center gap-2 mt-8">
-            Explore More
-            <ArrowBoop direction="right" />
-          </Button>
-        </div>
+        ))}
       </div>
     </section>
   );
