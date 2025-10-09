@@ -62,7 +62,7 @@ export default function LogoTiles() {
         <h1
           className={`
             relative z-10 text-[12rem] font-extrabold text-cyan-200/20
-            drop-shadow-[0_0_15px_rgba(0,255,255,0.15)]
+            drop-shadow-[0_0_25px_rgba(0,255,255,0.15)]
             transition-all duration-[900ms] ease-[cubic-bezier(.19,1,.22,1)]
             cursor-default group-hover:scale-110 group-hover:drop-shadow-[0_0_25px_rgba(0,255,255,0.4)] group-hover:text-cyan-400
             ${
