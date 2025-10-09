@@ -60,19 +60,19 @@ export default function About() {
 
           <div className="flex flex-wrap justify-start items-center gap-6 text-4xl text-white mt-4">
             <Tooltip content="Next.js" position="top">
-              <SiNextdotjs />
+              <SiNextdotjs className="text-white" />
             </Tooltip>
             <Tooltip content="React.js" position="top">
-              <SiReact />
+              <SiReact className="text-blue-300" />
             </Tooltip>
-            <Tooltip content="TypeScript" position="top">
-              <SiTypescript />
+            <Tooltip content="TypeScript " position="top">
+              <SiTypescript className="text-blue-400" />
             </Tooltip>
             <Tooltip content="Tailwind CSS" position="top">
-              <SiTailwindcss />
+              <SiTailwindcss className="text-blue-300" />
             </Tooltip>
             <Tooltip content="Prisma" position="top">
-              <SiPrisma />
+              <SiPrisma className="text-gray-200" />
             </Tooltip>
           </div>
         </div>

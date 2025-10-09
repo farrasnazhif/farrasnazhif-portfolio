@@ -7,7 +7,6 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiReact,
-  SiNodedotjs,
   SiTypescript,
   SiPrisma,
   SiVercel,

@@ -19,16 +19,24 @@ export default function Button({
 
   const variants = {
     primary: "bg-cyan-900 hover:bg-cyan-700 text-white",
-    outline:
-      "bg-transparent hover:bg-slate-900/60 text-white border border-slate-700",
+    outline: `
+      relative border-none bg-transparent
+      before:content-[''] before:absolute before:inset-0
+      before:w-full before:h-full before:rounded
+      before:border before:border-[hsl(210,15%,25%)]
+      before:transition-all before:duration-200
+      hover:before:w-[calc(100%+4px)]
+      hover:before:h-[calc(100%+4px)]
+      hover:before:-inset-[2px]
+    `,
   };
-  // px-4 py-2
+
   return (
     <button
       {...rest}
       onMouseMove={handleMouseMove}
       className={clsx(
-        "relative overflow-hidden font-light px-4 py-2 rounded-md transition-all duration-200 focus:outline-none ",
+        "relative font-light px-4 py-2 rounded-md transition-all duration-200 focus:outline-none",
         variants[variant],
         variant === "primary" && styles.glowButton,
         className
