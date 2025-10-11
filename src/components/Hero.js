@@ -37,19 +37,27 @@ export default function Hero() {
         </div>
         <div className="flex space-x-4">
           <Tooltip content="Github">
-            <Link href="https://github.com/farrasnazhif">
+            <Link href="https://github.com/farrasnazhif" target="_blank">
               <GitHub strokeWidth={1} />
             </Link>
           </Tooltip>
 
           <Tooltip content="Instagram">
-            <Link href="https://www.instagram.com/farrasnazhiif?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <Link
+              href="https://www.instagram.com/farrasnazhiif?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+            >
               <Instagram strokeWidth={1} />
             </Link>
           </Tooltip>
 
-          <Tooltip content="Resume">
-            <File strokeWidth={1} />
+          <Tooltip content="Resume" target="_blank">
+            <Link
+              href="https://drive.google.com/drive/folders/1juvfTr00JPodDOVADuCDVpd8w1wuBM17?usp=sharing"
+              target="_blank"
+            >
+              <File strokeWidth={1} />
+            </Link>
           </Tooltip>
         </div>
       </div>
