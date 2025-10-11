@@ -14,7 +14,7 @@ import {
 
 export default function About() {
   return (
-    <section className="relative flex flex-col lg:flex-row justify-center items-start gap-[2rem] lg:gap-[8rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-red-900/30 via-black to-red-900/30 overflow-hidden">
+    <section className="relative flex flex-col lg:flex-row justify-center items-start gap-[2rem] lg:gap-[8rem] text-start px-6 lg:px-12 py-[12rem] bg-gradient-to-r from-red-900/30 via-black to-red-900/30 overflow-hidden min-h-screen">
       <div className="flex flex-col justify-center items-center w-full lg:w-auto mb-12 lg:mb-0 gap-16">
         <Avatar />
         <div className="flex flex-col justify-start items-start gap-6">
